@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: 'Work Sans', sans-serif;
+  background-color: #F8F9FA;
+  font-family: 'Work Sans', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
