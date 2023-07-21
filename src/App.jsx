@@ -21,6 +21,7 @@ const theme = createTheme({
     },
     typography: {
         subtitle1: {
+            fontSize: '1rem',
             color: grey[700],
         },
         subtitle2: {
@@ -78,14 +79,14 @@ const theme = createTheme({
         MuiCardContent: {
             styleOverrides: {
                 root: {
-                    padding: '2rem',
+                    padding: '2rem 3.5rem',
                 }
             }
         },
         MuiCardActions: {
             styleOverrides: {
                 root: {
-                    padding: '2rem',
+                    padding: '3.5rem',
                     paddingTop: 0
                 }
             }
