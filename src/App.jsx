@@ -15,7 +15,7 @@ const theme = createTheme({
             main: '#AD0922',
         },
         secondary: {
-            main: blueGrey[100],
+            main: blueGrey[50],
             contrastText: grey[900]
         },
         navbar: {

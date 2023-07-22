@@ -58,9 +58,11 @@ export default function Home() {
                     Topics
                 </Button>
                 <Tabs value={value} sx={{height: '5rem'}} onChange={handleChange} aria-label="basic tabs example">
-                    <Tab label="Item One" {...a11yProps(0)} />
-                    <Tab label="Item Two" {...a11yProps(1)} />
-                    <Tab label="Item Three" {...a11yProps(2)} />
+                    <Tab label="Latest" {...a11yProps(0)} />
+                    <Tab label="Unread" {...a11yProps(1)} />
+                    <Tab label="Rising" {...a11yProps(2)} />
+                    <Tab label="Most Liked" {...a11yProps(3)} />
+                    <Tab label="Follow Feed" {...a11yProps(4)} />
                 </Tabs>
             </Box>
             <Table />
