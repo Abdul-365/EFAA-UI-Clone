@@ -1,13 +1,21 @@
-import { numify } from "numify";
-import { styled } from '@mui/material/styles';
+import { Avatar, Box, Typography } from '@mui/material';
+import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
+import * as colors from '@mui/material/colors';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { Avatar, Box } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { numify } from "numify";
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+
+const allColors = Object.values(colors).map(color => color[500]);
+function getRandomColor() {
+    return allColors[Math.floor(Math.random() * allColors.length)];
+}
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     // [`&.${tableCellClasses.head}`]: {
@@ -29,44 +37,44 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 
-function createData(topic, category, users, replies, views, activity) {
-    return { topic, category, users, replies, views, activity };
+function createData(topic, chips, category, users, replies, views, activity) {
+    return { topic, chips, category, users, replies, views, activity };
 }
 
 const rows = [
-    createData('Current News and Discussion',
+    createData('Current News and Discussion', null,
         'Mental Health', ['A', 'G', 'P'], 31, 41500, '13m'),
-    createData('Non-Urgent Emothional Help',
+    createData('Non-Urgent Emothional Help', ['mentalhealth', 'enabler'],
         'Video', ['L', 'T'], 252, 396, '30m'),
-    createData('Other Ways of Getting Help',
+    createData('Other Ways of Getting Help', null,
         'Mind', ['E', 'I', 'R'], 207, 7500, '41m'),
-    createData('How to help a person who self-harms!',
+    createData('How to help a person who self-harms!', null,
         'Q&A', ['F'], 2300, 2000, '1h'),
-    createData('Feeling overwhelmed',
+    createData('Feeling overwhelmed', ['hope', 'help'],
         'Hope', ['C', 'U', 'I'], 441, 3100, '6h'),
-    createData('Should I tell',
+    createData('Should I tell', ['neverstop', 'doubt'],
         'Never Stop', ['K', 'N', 'Q'], 1300, 6000, '7h'),
-    createData('If you need someone to talk to urgently and in confidence',
+    createData('If you need someone to talk to urgently and in confidence', null,
         'Emotional Help', ['C', 'W', 'Y'], 5700, 33600, '13h'),
-    createData('Post the weirdest thing you own here',
+    createData('Post the weirdest thing you own here', null,
         'Education', ['D', 'M', 'R'], 236, 2300, '10h'),
     createData('Show me your awesome photography',
-        'Science', ['E', 'R', 'T'], 3, 519, '2d'),
-    createData('Prevention Strategies',
+        ['photography'], 'Science', ['E', 'R', 'T'], 3, 519, '2d'),
+    createData('Prevention Strategies', null,
         'Random', ['H', 'M', 'Y'], 60, 891, '1h'),
-    createData('Live Music',
+    createData('Live Music', null,
         'Music', ['L', 'A'], 587, 3800, '3d'),
-    createData('Racing Thoughts',
+    createData('Racing Thoughts', ['climbing', 'funny', 'adventure'],
         'Entertainment', ['I', 'O', 'S'], 628, 997, '1h'),
-    createData('Post your artwork!',
+    createData('Post your artwork!', null,
         'Art', ['S', 'G'], 147, 397, '3h'),
-    createData('How to feel normal?',
+    createData('How to feel normal?', null,
         'Upset', ['K', 'L', 'R'], 274, 2900, '1d'),
-    createData('Tell me about your recent dream',
+    createData('Tell me about your recent dream', null,
         'Dreams', ['N', 'H'], 0, 42, '1d'),
-    createData('A thread in which you tell users to go to sleep',
+    createData('A thread in which you tell users to go to sleep', ['dreams', 'life', 'reason', 'social'],
         'Social', ['J', 'D', 'Q'], 129, 752, '19h'),
-    createData('What\'s everyone listening?',
+    createData('What\'s everyone listening?', null,
         'Random', ['B', 'M', 'Z'], 305, 2100, '6h'),
 ];
 
@@ -88,12 +96,25 @@ export default function CustomizedTables() {
                     {rows.map((row) => (
                         <StyledTableRow key={row.name}>
                             <StyledTableCell component="th" scope="row">
-                                {row.topic}
+                                <>
+                                    <Typography>{row.topic}</Typography>
+                                    {row.chips &&
+                                        <Stack mt={2} direction="row" spacing={1}>
+                                            {row.chips.map((chip) => (
+                                                <Chip sx={{ bgcolor: getRandomColor }} label={chip} />
+                                            ))}
+                                        </Stack>
+                                    }
+                                </>
                             </StyledTableCell>
                             <StyledTableCell>{row.category}</StyledTableCell>
                             <StyledTableCell>
                                 <Box display='flex' columnGap={1}>
-                                    {row.users.map((user) => <Avatar sx={{ width: 30, height: 30 }}>{user}</Avatar>)}
+                                    {row.users.map((user) =>
+                                        <Avatar sx={{ bgcolor: getRandomColor, width: 30, height: 30 }}>
+                                            {user}
+                                        </Avatar>)
+                                    }
                                 </Box>
                             </StyledTableCell>
                             <StyledTableCell>{numify(row.replies)}</StyledTableCell>

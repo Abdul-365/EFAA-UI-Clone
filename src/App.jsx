@@ -111,6 +111,19 @@ const theme = createTheme({
                     height: '100%'
                 }
             }
+        },
+        MuiChip: {
+            defaultProps: {
+                size: 'small',
+            },
+            styleOverrides: {
+                root: {
+                    borderRadius: '10%'
+                },
+                label: {
+                    color: '#fff',
+                }
+            }
         }
     },
 });
