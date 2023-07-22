@@ -2,7 +2,7 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { Box, Button, Divider } from '@mui/material';
+import { Box, Button, Divider, Grid } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -39,7 +39,7 @@ const inputs = [
 const WrappedCheckbox = styled(FormControlLabel)(() => ({
     border: '0.08rem solid #E9ECEE',
     borderRadius: '0.1rem',
-    margin: '1rem 2rem 1rem 0'
+    margin: '0'
 }));
 
 
@@ -152,13 +152,13 @@ export default function Signup() {
                     </Divider>
                     <CardContent>
                         <Typography variant='body2' sx={{ mb: 3 }}>Who can see my profile? </Typography>
-                        <FormGroup sx={{ flexDirection: 'row' }}>
+                        <FormGroup sx={{ flexDirection: 'row', columnGap: 4 }} >
                             {profile.map((label) => (
                                 <WrappedCheckbox control={<Checkbox />} label={label} />
                             ))}
                         </FormGroup>
-                        <Typography variant='body2' sx={{ mt: 4, mb: 3 }}>Who can see my profile? </Typography>
-                        <FormGroup sx={{ flexDirection: 'row' }}>
+                        <Typography variant='body2' sx={{ mt: 4, mb: 3 }}>Automatically share my posts and replies on Social Networks </Typography>
+                        <FormGroup sx={{ flexDirection: 'row', columnGap: 4 }}>
                             {socialNetworks.map((network) => (
                                 <WrappedCheckbox
                                     control={<Checkbox />}
@@ -203,11 +203,14 @@ export default function Signup() {
                     </Divider>
                     <CardContent>
                         <Typography variant='body2' sx={{ mb: 3 }}>Categories I am interested in </Typography>
-                        <FormGroup sx={{ flexDirection: 'row' }}>
+                        <Grid container spacing={3}>
                             {categories.map((category) => (
-                                <WrappedCheckbox sx={{ width: '8rem' }} control={<Checkbox />} label={category} />
+                                <Grid item xs={3}>
+                                <WrappedCheckbox sx={{ width: '100%'}} control={<Checkbox />} label={category} />
+
+                                </Grid>
                             ))}
-                        </FormGroup>
+                        </Grid>
                     </CardContent>
                     <Divider />
                     <CardContent sx={{ display: 'flex' }}>

@@ -20,6 +20,7 @@ const theme = createTheme({
         },
     },
     typography: {
+        fontFamily: '\'Work Sans\', sans-serif !important',
         subtitle1: {
             fontSize: '1rem',
             color: grey[700],
@@ -39,7 +40,7 @@ const theme = createTheme({
         MuiInputBase: {
             styleOverrides: {
                 input: {
-                    fontWeight: 600,
+                    fontWeight: '600',
                     fontSize: '0.9rem',
                     paddingBottom: '1rem',
                 },
@@ -79,14 +80,15 @@ const theme = createTheme({
         MuiCardContent: {
             styleOverrides: {
                 root: {
-                    padding: '2rem 3.5rem',
+                    padding: '3rem',
+                    paddingTop: '2rem',
                 }
             }
         },
         MuiCardActions: {
             styleOverrides: {
                 root: {
-                    padding: '3.5rem',
+                    padding: '3rem',
                     paddingTop: 0
                 }
             }
