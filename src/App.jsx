@@ -1,6 +1,8 @@
 import CheckIcon from '@mui/icons-material/Check';
-import { grey, blueGrey } from '@mui/material/colors';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import { blueGrey, grey } from '@mui/material/colors';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -102,6 +104,13 @@ const theme = createTheme({
                     textTransform: 'none !important'
                 }
             }
+        },
+        MuiTabs: {
+            styleOverrides: {
+                flexContainer: {
+                    height: '100%'
+                }
+            }
         }
     },
 });
@@ -114,8 +123,13 @@ export default function App() {
                 <Route path='/' element={
                     <>
                         <Navbar />
-                        <Outlet />
-                        <Footer />
+                        <Container sx={{ mt: 10, pt: 2 }}>
+                            <Box mb={10}>
+                                <Outlet />
+                            </Box>
+                            <Footer />
+                        </Container>
+
                     </>
                 }>
                     <Route index element={<Home />} />
