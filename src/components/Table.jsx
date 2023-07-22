@@ -12,7 +12,7 @@ import { numify } from "numify";
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
-const allColors = Object.values(colors).map(color => color[500]);
+const allColors = Object.values(colors).map(color => color[700]);
 function getRandomColor() {
     return allColors[Math.floor(Math.random() * allColors.length)];
 }
@@ -28,7 +28,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(odd)': {
+    '&:nth-of-type(even)': {
         backgroundColor: theme.palette.secondary.light,
     },
     // hide last border

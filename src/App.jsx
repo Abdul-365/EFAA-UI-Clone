@@ -98,10 +98,20 @@ const theme = createTheme({
                 }
             }
         },
+        MuiButton: {
+            defaultProps: {
+                disableElevation: true,
+            },
+            styleOverrides: {
+                root: {
+                    borderRadius: '0%'
+                }
+            }
+        },
         MuiButtonBase: {
             styleOverrides: {
                 root: {
-                    textTransform: 'none !important'
+                    textTransform: 'none !important',
                 }
             }
         },
@@ -136,13 +146,10 @@ export default function App() {
                 <Route path='/' element={
                     <>
                         <Navbar />
-                        <Container sx={{ mt: 10, pt: 2 }}>
-                            <Box mb={10}>
-                                <Outlet />
-                            </Box>
-                            <Footer />
+                        <Container sx={{ mt: 10, pt: 2, mb: 8 }}>
+                            <Outlet />
                         </Container>
-
+                        <Footer />
                     </>
                 }>
                     <Route index element={<Home />} />

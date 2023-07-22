@@ -55,7 +55,7 @@ export default function Home() {
                     All Categories
                 </Button>
                 <Button variant='contained' color='secondary' endIcon={<KeyboardArrowDownIcon />} sx={{ mr: 3 }}>
-                    Topics
+                    Tags
                 </Button>
                 <Tabs value={value} sx={{height: '5rem'}} onChange={handleChange} aria-label="basic tabs example">
                     <Tab label="Latest" {...a11yProps(0)} />

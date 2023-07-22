@@ -57,7 +57,7 @@ export default function PrimarySearchAppBar() {
 
     return (
         <AppBar position="fixed" color='navbar' elevation={1}>
-            <Container maxWidth="lg">
+            <Container>
                 <Toolbar disableGutters sx={{ height: '5rem' }}>
                     <Box
                         component="img"
