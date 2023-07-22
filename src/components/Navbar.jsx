@@ -4,6 +4,7 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import SearchIcon from '@mui/icons-material/Search';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
+import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -41,15 +42,13 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
+    width: '100%',
     '& .MuiInputBase-input': {
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '20ch',
-        },
     },
 }));
 
@@ -67,7 +66,7 @@ export default function PrimarySearchAppBar() {
                         mr={4}
                     />
                     <Divider orientation="vertical" flexItem />
-                    <Search>
+                    <Search sx={{ flexGrow: 1 }}>
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
@@ -76,23 +75,33 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    <Button variant='text' endIcon={<KeyboardArrowDownIcon />} sx={{ mr: 3 }}>
+                    <Button variant='text' endIcon={<KeyboardArrowDownIcon />}>
                         Topics
                     </Button>
-                    <Divider orientation="vertical" flexItem />
-                    <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button variant='text' endIcon={<MenuIcon />} sx={{ mr: 3 }}>
+                    <Divider orientation="vertical" flexItem sx={{ mx: 3 }} />
+                    <Box display='flex' columnGap={3}>
+                        <Button variant='text' endIcon={<MenuIcon />}>
                             Latest Topics
                         </Button>
                         <IconButton aria-label="delete">
-                            <NotificationsNoneIcon />
+                            <Badge
+                                badgeContent={4}
+                                color='primary'
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                }}
+                            >
+                                <NotificationsNoneIcon />
+                            </Badge>
                         </IconButton>
-                        <Avatar alt="Remy Sharp" >A</Avatar>
+                        <Box display='flex' columnGap={1}>
+                            <Avatar alt="Remy Sharp">A</Avatar>
+                            <Button variant='text' endIcon={<KeyboardArrowDownIcon />}>
+                                azyrusmax
+                            </Button>
+                        </Box>
                     </Box>
-                    <Button variant='text' endIcon={<KeyboardArrowDownIcon />} sx={{ mr: 3 }}>
-                        azyrusmax
-                    </Button>
                 </Toolbar>
             </Container>
         </AppBar>

@@ -12,7 +12,7 @@ import SignUp from './components/Signup';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#AD0922',
+            main: grey[800],
         },
         secondary: {
             main: blueGrey[50],
