@@ -1,7 +1,6 @@
 import CheckIcon from '@mui/icons-material/Check';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { blueGrey, grey } from '@mui/material/colors';
+import { blueGrey, grey, yellow } from '@mui/material/colors';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -12,16 +11,17 @@ import SignUp from './components/Signup';
 const theme = createTheme({
     palette: {
         primary: {
-            main: grey[800],
+            main: '#fff',
+            dark: grey[100],
         },
         secondary: {
             main: blueGrey[50],
             contrastText: grey[900]
         },
-        navbar: {
-            main: '#fff',
-            contrastText: grey[700]
-        }
+        tertiary: {
+            main: '#AD0922',
+            contrastText: grey[50]
+        },
     },
     typography: {
         fontFamily: '\'Work Sans\', sans-serif !important',
@@ -119,6 +119,9 @@ const theme = createTheme({
             styleOverrides: {
                 flexContainer: {
                     height: '100%'
+                },
+                indicator: {
+                    backgroundColor: yellow[700]
                 }
             }
         },

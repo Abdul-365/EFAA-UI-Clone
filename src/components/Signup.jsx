@@ -230,7 +230,7 @@ export default function Signup() {
                         />
                     </CardContent>
                     <CardActions>
-                        <Button fullWidth variant="contained" size='large'>
+                        <Button fullWidth variant="contained" color='tertiary' size='large'>
                             Create New Account
                         </Button>
                     </CardActions>

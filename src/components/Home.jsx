@@ -50,14 +50,20 @@ export default function Home() {
 
     return (
         <>
-            <Box display='flex' alignItems='center' sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Button variant='contained' color='secondary' endIcon={<KeyboardArrowDownIcon />} sx={{ mr: 3 }}>
+            <Box display='flex' columnGap={2} alignItems='center' sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                <Button variant='contained' color='secondary' endIcon={<KeyboardArrowDownIcon />}>
                     All Categories
                 </Button>
-                <Button variant='contained' color='secondary' endIcon={<KeyboardArrowDownIcon />} sx={{ mr: 3 }}>
+                <Button variant='contained' color='secondary' endIcon={<KeyboardArrowDownIcon />}>
                     Tags
                 </Button>
-                <Tabs value={value} sx={{height: '5rem'}} onChange={handleChange} aria-label="basic tabs example">
+                <Tabs
+                    textColor="inherit"
+                    value={value}
+                    sx={{ height: '5rem' }}
+                    onChange={handleChange}
+                    aria-label="basic tabs example"
+                >
                     <Tab label="Latest" {...a11yProps(0)} />
                     <Tab label="Unread" {...a11yProps(1)} />
                     <Tab label="Rising" {...a11yProps(2)} />

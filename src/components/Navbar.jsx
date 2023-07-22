@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
 
     return (
-        <AppBar position="fixed" color='navbar' elevation={1}>
+        <AppBar position="fixed" color='primary' elevation={1}>
             <Container>
                 <Toolbar disableGutters sx={{ height: '5rem' }}>
                     <Box
@@ -75,12 +75,12 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    <Button variant='text' endIcon={<KeyboardArrowDownIcon />}>
+                    <Button variant='contained' endIcon={<KeyboardArrowDownIcon />}>
                         Topics
                     </Button>
                     <Divider orientation="vertical" flexItem sx={{ mx: 3 }} />
                     <Box display='flex' columnGap={3}>
-                        <Button variant='text' endIcon={<MenuIcon />}>
+                        <Button variant='contained' endIcon={<MenuIcon />}>
                             Latest Topics
                         </Button>
                         <IconButton aria-label="delete">
@@ -97,7 +97,7 @@ export default function PrimarySearchAppBar() {
                         </IconButton>
                         <Box display='flex' columnGap={1}>
                             <Avatar alt="Remy Sharp">A</Avatar>
-                            <Button variant='text' endIcon={<KeyboardArrowDownIcon />}>
+                            <Button variant='contained' endIcon={<KeyboardArrowDownIcon />}>
                                 azyrusmax
                             </Button>
                         </Box>
