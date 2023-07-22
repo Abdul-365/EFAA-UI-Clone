@@ -2,6 +2,7 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -45,18 +46,55 @@ const WrappedCheckbox = styled(FormControlLabel)(() => ({
     margin: '0'
 }));
 
-
 const profile = ['Everyone', 'Only Friends', 'Invite only'];
+
+const surveyQues = [
+    {
+        id: '1',
+        question: 'How old are you?',
+        options: Array.from({ length: 83 }, (_, i) => i + 18)
+    },
+    {
+        id: '2',
+        question: 'Who are you?',
+        options: ['Male', 'Female']
+    },
+    {
+        id: '3',
+        question: 'Will you be friendly here?',
+        options: ['Yes', 'No']
+    },
+    {
+        id: '4',
+        question: 'Where do you heard about us?',
+        options: ['By Search Engine', 'By Advertisement', 'By Friend']
+    },
+]
 
 const socialNetworks = [
     <>
         <FacebookIcon />
-        <Typography variant='body1'>Facebook</Typography>
+        <Typography>Facebook</Typography>
     </>,
     <>
         <TwitterIcon />
-        <Typography variant='body1'>Twitter</Typography>
+        <Typography>Twitter</Typography>
+    </>
+];
+
+const socialLinks = [
+    <>
+        <FacebookIcon />
+        <Typography>Facebook URL</Typography>
     </>,
+    <>
+        <TwitterIcon />
+        <Typography>Twitter Username</Typography>
+    </>,
+    <>
+        <YouTubeIcon />
+        <Typography>Youtube Channel URL</Typography>
+    </>
 ];
 
 const categories = [
@@ -136,6 +174,7 @@ export default function Signup() {
                                     variant='standard'
                                     fullWidth
                                     margin='normal'
+                                    color='tertiary'
                                 />
                             ))}
                         </Box>
@@ -147,6 +186,7 @@ export default function Signup() {
                                 variant='standard'
                                 fullWidth
                                 margin='normal'
+                                color='tertiary'
                             />
                         ))}
                     </CardContent>
@@ -176,32 +216,43 @@ export default function Signup() {
                         <Typography variant='subtitle2' fontWeight='bold'>Small Survey (OPTIONAL)</Typography>
                     </Divider>
                     <CardContent>
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <InputLabel id="demo-simple-select-standard-label">who</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-standard-label"
-                            >
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
+                        <Grid container spacing={3}>
+                            {surveyQues.map((item) => (
+                                <Grid item xs={6}>
+                                    <FormControl
+                                        color='tertiary'
+                                        variant="standard"
+                                        sx={{ m: 1, minWidth: 120, width: '100%' }}
+                                    >
+                                        <InputLabel id={item.id}>{item.question}</InputLabel>
+                                        <Select labelId={item.id}>
+                                            {item.options.map((option) => (
+                                                <MenuItem value={10}>{option}</MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                            ))}
+                        </Grid>
                     </CardContent>
                     <Divider textAlign='left'>
                         <Typography variant='subtitle2' fontWeight='bold'>Link Social Networks (OPTIONAL)</Typography>
                     </Divider>
                     <CardContent>
-                        <Box display='flex' columnGap={4}>
-                            {socialNetworks.map((network) => (
-                                <TextField
-                                    key={network}
-                                    label={<Box display='flex' columnGap={1}>{network}</Box>}
-                                    variant='standard'
-                                    fullWidth
-                                    margin='normal'
-                                />
+                        <Grid container spacing={3}>
+                            {socialLinks.map((network) => (
+                                <Grid item xs={6}>
+                                    <TextField
+                                        key={network}
+                                        label={<Box display='flex' columnGap={1}>{network}</Box>}
+                                        variant='standard'
+                                        fullWidth
+                                        margin='normal'
+                                        color='tertiary'
+                                    />
+                                </Grid>
                             ))}
-                        </Box>
+                        </Grid>
                     </CardContent>
                     <Divider textAlign='left'>
                         <Typography variant='subtitle2' fontWeight='bold'>Interested Categories (OPTIONAL)</Typography>
