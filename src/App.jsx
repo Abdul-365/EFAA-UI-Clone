@@ -1,5 +1,5 @@
 import CheckIcon from '@mui/icons-material/Check';
-import { grey } from '@mui/material/colors';
+import { grey, blueGrey } from '@mui/material/colors';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -13,27 +13,30 @@ const theme = createTheme({
             main: '#AD0922',
         },
         secondary: {
-            main: '#1A1718',
+            main: blueGrey[100],
+            contrastText: grey[900]
         },
-        tertiary: {
-            main: '#B2AFAA',
-        },
+        navbar: {
+            main: '#fff',
+            contrastText: grey[700]
+        }
     },
     typography: {
         fontFamily: '\'Work Sans\', sans-serif !important',
         subtitle1: {
             fontSize: '1rem',
-            color: grey[700],
         },
         subtitle2: {
-            fontSize: '0.8rem',
-            color: grey[700],
+            fontSize: '1rem',
+            color: grey[600],
         },
         body1: {
-            color: grey[700],
+            fontWeight: '500 !important',
+            fontSize: '0.9rem !important'
         },
         body2: {
-            color: grey[500],
+            fontSize: '0.9rem !important',
+            color: grey[600],
         }
     },
     components: {
@@ -71,8 +74,8 @@ const theme = createTheme({
                     marginLeft: '-0.9rem',
                 },
                 label: {
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
+                    // fontSize: '0.8rem',
+                    // fontWeight: '600',
                     paddingRight: '0.9rem'
                 }
             }

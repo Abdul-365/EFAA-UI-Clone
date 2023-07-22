@@ -51,11 +51,11 @@ const profile = ['Everyone', 'Only Friends', 'Invite only'];
 const socialNetworks = [
     <>
         <FacebookIcon />
-        <Typography>Facebook</Typography>
+        <Typography variant='body1'>Facebook</Typography>
     </>,
     <>
         <TwitterIcon />
-        <Typography>Twitter</Typography>
+        <Typography variant='body1'>Twitter</Typography>
     </>,
 ];
 
@@ -90,7 +90,7 @@ export default function Signup() {
         <>
             <Box display='flex' alignItems='center' mt={3} mr={20}>
                 <Typography sx={{ ml: 'auto', mr: 3 }} variant="subtitle1">Already have an account?</Typography>
-                <Button variant="contained" color="tertiary">
+                <Button variant="contained" color="secondary">
                     Sign In
                 </Button>
             </Box>
@@ -160,7 +160,9 @@ export default function Signup() {
                                 <WrappedCheckbox control={<Checkbox />} label={label} />
                             ))}
                         </FormGroup>
-                        <Typography variant='body2' sx={{ mt: 4, mb: 3 }}>Automatically share my posts and replies on Social Networks </Typography>
+                        <Typography variant='body2' sx={{ mt: 4, mb: 3 }}>
+                            Automatically share my posts and replies on Social Networks
+                        </Typography>
                         <FormGroup sx={{ flexDirection: 'row', columnGap: 4 }}>
                             {socialNetworks.map((network) => (
                                 <WrappedCheckbox
@@ -209,16 +211,23 @@ export default function Signup() {
                         <Grid container spacing={3}>
                             {categories.map((category) => (
                                 <Grid item xs={3}>
-                                <WrappedCheckbox sx={{ width: '100%'}} control={<Checkbox />} label={category} />
-
+                                    <WrappedCheckbox sx={{ width: '100%' }} control={<Checkbox />} label={category} />
                                 </Grid>
                             ))}
                         </Grid>
                     </CardContent>
                     <Divider />
                     <CardContent sx={{ display: 'flex' }}>
-                        <FormControlLabel sx={{ flex: '1 1 0' }} control={<Checkbox />} label='I agree to the Terms and Conditions' />
-                        <FormControlLabel sx={{ flex: '1 1 0' }} control={<Checkbox />} label='Subscribe to newsletter' />
+                        <FormControlLabel
+                            sx={{ flex: '1 1 0' }}
+                            control={<Checkbox />}
+                            label='I agree to the Terms and Conditions'
+                        />
+                        <FormControlLabel
+                            sx={{ flex: '1 1 0' }}
+                            control={<Checkbox />}
+                            label='Subscribe to newsletter'
+                        />
                     </CardContent>
                     <CardActions>
                         <Button fullWidth variant="contained" size='large'>
