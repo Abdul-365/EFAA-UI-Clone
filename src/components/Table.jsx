@@ -1,16 +1,18 @@
-import { Avatar, Box, Typography } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import * as colors from '@mui/material/colors';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Typography from '@mui/material/Typography';
+import * as colors from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import { numify } from "numify";
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 
 const allColors = Object.values(colors).map(color => color[700]);
 function getRandomColor() {
@@ -107,7 +109,23 @@ export default function CustomizedTables() {
                                     }
                                 </>
                             </StyledTableCell>
-                            <StyledTableCell>{row.category}</StyledTableCell>
+                            <StyledTableCell>
+                                <Typography
+                                    sx={{
+                                        '&:before': {
+                                            content: '""',
+                                            display: 'inline-block',
+                                            width: '0.6rem',
+                                            height: '0.6rem',
+                                            borderRadius: '50%',
+                                            backgroundColor: getRandomColor(),
+                                            marginRight: '0.8rem',
+                                        },
+                                    }}
+                                >
+                                    {row.category}
+                                </Typography>
+                            </StyledTableCell>
                             <StyledTableCell>
                                 <Box display='flex' columnGap={1}>
                                     {row.users.map((user) =>
