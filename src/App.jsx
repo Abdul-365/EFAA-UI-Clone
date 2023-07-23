@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import SignUp from './components/Signup';
-
+import Popup from './components/Popup';
 const theme = createTheme({
     palette: {
         primary: {
@@ -22,6 +22,9 @@ const theme = createTheme({
             main: '#AD0922',
             contrastText: grey[50]
         },
+        quaternary: {
+            main: grey[600],
+        }
     },
     typography: {
         fontFamily: '\'Work Sans\', sans-serif !important',
@@ -154,6 +157,7 @@ export default function App() {
                     <Route index element={<Home />} />
                 </Route>
                 <Route path='/signup' element={<SignUp />} />
+                <Route path='/popup' element={<Popup />} />
             </Routes>
         </ThemeProvider>
     );
