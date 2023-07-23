@@ -10,6 +10,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 import * as colors from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import { numify } from "numify";
@@ -93,13 +95,28 @@ export default function CustomizedTables() {
                         <StyledTableCell>Views</StyledTableCell>
                         <StyledTableCell>Activity</StyledTableCell>
                     </TableRow>
+                    <TableRow sx={{ backgroundColor: (theme) => theme.palette.info.light }}>
+                        <StyledTableCell>
+                            <Typography variant='subtitle1'>
+                                Welcome Enabler! Please read this before posting!
+                            </Typography>
+                            <Typography variant='body2'>
+                                Before you make a new topic or post, please read the community guidelines.<br /> We aim to be the friendliest community for online mental health support.
+                            </Typography>
+                        </StyledTableCell>
+                        <StyledTableCell></StyledTableCell>
+                        <StyledTableCell></StyledTableCell>
+                        <StyledTableCell></StyledTableCell>
+                        <StyledTableCell></StyledTableCell>
+                        <StyledTableCell></StyledTableCell>
+                    </TableRow>
                 </TableHead>
                 <TableBody>
                     {rows.map((row) => (
                         <StyledTableRow key={row.name}>
                             <StyledTableCell component="th" scope="row">
                                 <>
-                                    <Typography>{row.topic}</Typography>
+                                    <Typography variant='subtitle2'>{row.topic}</Typography>
                                     {row.chips &&
                                         <Stack mt={2} direction="row" spacing={1}>
                                             {row.chips.map((chip) => (

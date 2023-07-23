@@ -1,6 +1,6 @@
 import CheckIcon from '@mui/icons-material/Check';
 import Container from '@mui/material/Container';
-import { blueGrey, grey, yellow } from '@mui/material/colors';
+import { blueGrey, grey, yellow, red } from '@mui/material/colors';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -24,6 +24,9 @@ const theme = createTheme({
         },
         quaternary: {
             main: grey[600],
+        },
+        info: {
+            main: red[100]
         }
     },
     typography: {
