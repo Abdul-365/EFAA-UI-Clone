@@ -1,6 +1,8 @@
 # EFA UI Clone
 A website that replicates the UI of Emotional First Aid Academy using React.js and Material UI.
+Deployed Website URL: https://efa-ui-clone.netlify.app/
 
+Add routes '/signup' or '/popup' at the end in URL to view all components.
 ## Home page (Route: /)
 ![Alt text](/public/screenshots/home.png "Title")
 ## Signup page (Route: /signup)
