@@ -32,10 +32,9 @@ const theme = createTheme({
     typography: {
         fontFamily: '\'Work Sans\', sans-serif !important',
         subtitle1: {
-            fontSize: '1rem',
+            fontWeight: '500 !important',
         },
         subtitle2: {
-            fontSize: '1rem',
             color: grey[600],
         },
         body1: {

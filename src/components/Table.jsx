@@ -85,7 +85,7 @@ export default function CustomizedTables() {
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }}>
                 <TableHead>
-                    <TableRow>
+                    <TableRow sx={{ backgroundColor: '#F8F9FA' }}>
                         <StyledTableCell>Topic</StyledTableCell>
                         <StyledTableCell>Category</StyledTableCell>
                         <StyledTableCell>Users</StyledTableCell>
@@ -114,7 +114,7 @@ export default function CustomizedTables() {
                         <StyledTableRow key={row.name}>
                             <StyledTableCell component="th" scope="row">
                                 <>
-                                    <Typography variant='subtitle2'>{row.topic}</Typography>
+                                    <Typography variant='subtitle1'>{row.topic}</Typography>
                                     {row.chips &&
                                         <Stack mt={2} direction="row" spacing={1}>
                                             {row.chips.map((chip) => (
