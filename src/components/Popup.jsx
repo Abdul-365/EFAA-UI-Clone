@@ -1,15 +1,15 @@
-import * as React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { Box, IconButton, Typography } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 
 export default function Popup() {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -20,7 +20,7 @@ export default function Popup() {
     };
 
     return (
-        <div>
+        <>
             <Button variant="contained" color="tertiary" onClick={handleClickOpen}>
                 Open Popup
             </Button>
@@ -41,7 +41,7 @@ export default function Popup() {
                         size='large'
                         sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
                     >
-                        <CloseIcon fontSize='inherit'/>
+                        <CloseIcon fontSize='inherit' />
                     </IconButton>
                 </DialogTitle>
                 <DialogContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '15rem', width: '32rem' }}>
@@ -60,6 +60,6 @@ export default function Popup() {
                     </Typography>
                 </DialogContent>
             </Dialog>
-        </div>
+        </>
     );
 }
