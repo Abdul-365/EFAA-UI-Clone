@@ -1,3 +1,13 @@
+# EFA UI Clone
+A website that replicates the UI of Emotional First Aid Academy using React.js and Material UI.
+
+## Home page (Route: /)
+![Alt text](/public/screenshots/home.png "Title")
+## Signup page (Route: /signup)
+![Alt text](/public/screenshots/signup.png "Title")
+## Popup page (Route: /popup)
+![Alt text](/public/screenshots/popup.png "Title")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

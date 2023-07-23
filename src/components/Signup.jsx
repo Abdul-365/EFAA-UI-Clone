@@ -197,7 +197,7 @@ export default function Signup() {
                         <Typography variant='body2' sx={{ mb: 3 }}>Who can see my profile? </Typography>
                         <FormGroup sx={{ flexDirection: 'row', columnGap: 4 }} >
                             {profile.map((label) => (
-                                <WrappedCheckbox control={<Checkbox />} label={label} />
+                                <WrappedCheckbox key={label} control={<Checkbox />} label={label} />
                             ))}
                         </FormGroup>
                         <Typography variant='body2' sx={{ mt: 4, mb: 3 }}>
@@ -206,6 +206,7 @@ export default function Signup() {
                         <FormGroup sx={{ flexDirection: 'row', columnGap: 4 }}>
                             {socialNetworks.map((network) => (
                                 <WrappedCheckbox
+                                    key={network}
                                     control={<Checkbox />}
                                     label={<Box display='flex' columnGap={1}>{network}</Box>}
                                 />
@@ -218,7 +219,7 @@ export default function Signup() {
                     <CardContent>
                         <Grid container spacing={3}>
                             {surveyQues.map((item) => (
-                                <Grid item xs={6}>
+                                <Grid item xs={6} key={item.id}>
                                     <FormControl
                                         color='tertiary'
                                         variant="standard"
@@ -227,7 +228,7 @@ export default function Signup() {
                                         <InputLabel id={item.id}>{item.question}</InputLabel>
                                         <Select labelId={item.id}>
                                             {item.options.map((option) => (
-                                                <MenuItem value={10}>{option}</MenuItem>
+                                                <MenuItem key={option} value={10}>{option}</MenuItem>
                                             ))}
                                         </Select>
                                     </FormControl>
