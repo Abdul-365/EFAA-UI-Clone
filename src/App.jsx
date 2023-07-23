@@ -45,8 +45,6 @@ const theme = createTheme({
         MuiInputBase: {
             styleOverrides: {
                 input: {
-                    fontWeight: '600',
-                    fontSize: '0.9rem',
                     paddingBottom: '1rem',
                 },
             },
@@ -76,8 +74,6 @@ const theme = createTheme({
                     marginLeft: '-0.9rem',
                 },
                 label: {
-                    // fontSize: '0.8rem',
-                    // fontWeight: '600',
                     paddingRight: '0.9rem'
                 }
             }

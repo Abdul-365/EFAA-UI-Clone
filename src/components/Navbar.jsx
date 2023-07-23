@@ -86,7 +86,7 @@ export default function PrimarySearchAppBar() {
                         <IconButton aria-label="delete">
                             <Badge
                                 badgeContent={4}
-                                color='primary'
+                                color='tertiary'
                                 anchorOrigin={{
                                     vertical: 'top',
                                     horizontal: 'left',
