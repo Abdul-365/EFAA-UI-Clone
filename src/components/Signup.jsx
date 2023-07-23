@@ -51,21 +51,25 @@ const profile = ['Everyone', 'Only Friends', 'Invite only'];
 const surveyQues = [
     {
         id: '1',
+        name: 'age',
         question: 'How old are you?',
         options: Array.from({ length: 83 }, (_, i) => i + 18)
     },
     {
         id: '2',
+        name: 'gender',
         question: 'Who are you?',
         options: ['Male', 'Female']
     },
     {
         id: '3',
+        name: 'freindly',
         question: 'Will you be friendly here?',
         options: ['Yes', 'No']
     },
     {
         id: '4',
+        name: 'source',
         question: 'Where do you heard about us?',
         options: ['By Search Engine', 'By Advertisement', 'By Friend']
     },
@@ -124,6 +128,18 @@ const footerIcons = [
 ]
 
 export default function Signup() {
+
+    const [surveyValues, setSurveyValues] = React.useState({
+        age: '',
+        gender: '',
+        freindly: '',
+        source: ''
+    });
+
+    const handleSurvey = (event) => {
+        setSurveyValues({ ...surveyValues, [event.taget.name]: event.target.value });
+    };
+
     return (
         <>
             <Box display='flex' alignItems='center' mt={3} mr={20}>
@@ -223,12 +239,15 @@ export default function Signup() {
                                     <FormControl
                                         color='tertiary'
                                         variant="standard"
+                                        name={item.name}
+                                        value={surveyValues[item.name]}
+                                        onChange={handleSurvey}
                                         sx={{ m: 1, minWidth: 120, width: '100%' }}
                                     >
                                         <InputLabel id={item.id}>{item.question}</InputLabel>
                                         <Select labelId={item.id}>
                                             {item.options.map((option) => (
-                                                <MenuItem key={option} value={10}>{option}</MenuItem>
+                                                <MenuItem key={option} value={option}>{option}</MenuItem>
                                             ))}
                                         </Select>
                                     </FormControl>
